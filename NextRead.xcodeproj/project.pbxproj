@@ -13,6 +13,15 @@
 		4D6542E42A4103C30057290C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D6542E32A4103C30057290C /* Preview Assets.xcassets */; };
 		4D6542E62A4103C30057290C /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6542E52A4103C30057290C /* Persistence.swift */; };
 		4D6542E92A4103C30057290C /* NextRead.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4D6542E72A4103C30057290C /* NextRead.xcdatamodeld */; };
+		4D6542F12A4104300057290C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6542F02A4104300057290C /* HomeView.swift */; };
+		4D6542F32A4104440057290C /* MyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6542F22A4104440057290C /* MyListView.swift */; };
+		4D6542F52A41044E0057290C /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6542F42A41044E0057290C /* SearchView.swift */; };
+		4D6542F72A41045E0057290C /* BookDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6542F62A41045E0057290C /* BookDetailView.swift */; };
+		4D6542FA2A41048B0057290C /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6542F92A41048A0057290C /* Book.swift */; };
+		4D6542FC2A4104940057290C /* BookResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6542FB2A4104940057290C /* BookResponse.swift */; };
+		4D6542FE2A41049F0057290C /* BookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6542FD2A41049F0057290C /* BookViewModel.swift */; };
+		4D6543002A4104B30057290C /* ReadListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6542FF2A4104B30057290C /* ReadListViewModel.swift */; };
+		4D6543072A4106D50057290C /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 4D6543062A4106D50057290C /* Config.xcconfig */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +32,16 @@
 		4D6542E32A4103C30057290C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4D6542E52A4103C30057290C /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		4D6542E82A4103C30057290C /* NextRead.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NextRead.xcdatamodel; sourceTree = "<group>"; };
+		4D6542F02A4104300057290C /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		4D6542F22A4104440057290C /* MyListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyListView.swift; sourceTree = "<group>"; };
+		4D6542F42A41044E0057290C /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		4D6542F62A41045E0057290C /* BookDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailView.swift; sourceTree = "<group>"; };
+		4D6542F92A41048A0057290C /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		4D6542FB2A4104940057290C /* BookResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookResponse.swift; sourceTree = "<group>"; };
+		4D6542FD2A41049F0057290C /* BookViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookViewModel.swift; sourceTree = "<group>"; };
+		4D6542FF2A4104B30057290C /* ReadListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadListViewModel.swift; sourceTree = "<group>"; };
+		4D6543062A4106D50057290C /* Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		4D6543082A410AD10057290C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +74,13 @@
 		4D6542DB2A4103C10057290C /* NextRead */ = {
 			isa = PBXGroup;
 			children = (
+				4D6543082A410AD10057290C /* Info.plist */,
+				4D6543062A4106D50057290C /* Config.xcconfig */,
+				4D6543012A4104C60057290C /* Model */,
+				4D6542F82A4104700057290C /* ViewModel */,
+				4D6542EF2A41041A0057290C /* Views */,
 				4D6542DC2A4103C10057290C /* NextReadApp.swift */,
-				4D6542DE2A4103C10057290C /* ContentView.swift */,
 				4D6542E02A4103C30057290C /* Assets.xcassets */,
-				4D6542E52A4103C30057290C /* Persistence.swift */,
-				4D6542E72A4103C30057290C /* NextRead.xcdatamodeld */,
 				4D6542E22A4103C30057290C /* Preview Content */,
 			);
 			path = NextRead;
@@ -71,6 +92,38 @@
 				4D6542E32A4103C30057290C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4D6542EF2A41041A0057290C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4D6542F62A41045E0057290C /* BookDetailView.swift */,
+				4D6542DE2A4103C10057290C /* ContentView.swift */,
+				4D6542F02A4104300057290C /* HomeView.swift */,
+				4D6542F22A4104440057290C /* MyListView.swift */,
+				4D6542F42A41044E0057290C /* SearchView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4D6542F82A4104700057290C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4D6542FF2A4104B30057290C /* ReadListViewModel.swift */,
+				4D6542FD2A41049F0057290C /* BookViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4D6543012A4104C60057290C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4D6542E52A4103C30057290C /* Persistence.swift */,
+				4D6542FB2A4104940057290C /* BookResponse.swift */,
+				4D6542F92A41048A0057290C /* Book.swift */,
+				4D6542E72A4103C30057290C /* NextRead.xcdatamodeld */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,6 +184,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D6543072A4106D50057290C /* Config.xcconfig in Resources */,
 				4D6542E42A4103C30057290C /* Preview Assets.xcassets in Resources */,
 				4D6542E12A4103C30057290C /* Assets.xcassets in Resources */,
 			);
@@ -143,9 +197,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D6542F72A41045E0057290C /* BookDetailView.swift in Sources */,
+				4D6542FC2A4104940057290C /* BookResponse.swift in Sources */,
+				4D6542F32A4104440057290C /* MyListView.swift in Sources */,
 				4D6542E92A4103C30057290C /* NextRead.xcdatamodeld in Sources */,
 				4D6542E62A4103C30057290C /* Persistence.swift in Sources */,
+				4D6542FE2A41049F0057290C /* BookViewModel.swift in Sources */,
+				4D6542F52A41044E0057290C /* SearchView.swift in Sources */,
+				4D6542FA2A41048B0057290C /* Book.swift in Sources */,
 				4D6542DF2A4103C10057290C /* ContentView.swift in Sources */,
+				4D6542F12A4104300057290C /* HomeView.swift in Sources */,
+				4D6543002A4104B30057290C /* ReadListViewModel.swift in Sources */,
 				4D6542DD2A4103C10057290C /* NextReadApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -155,6 +217,7 @@
 /* Begin XCBuildConfiguration section */
 		4D6542EA2A4103C30057290C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D6543062A4106D50057290C /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -215,6 +278,7 @@
 		};
 		4D6542EB2A4103C30057290C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D6543062A4106D50057290C /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -278,6 +342,7 @@
 				DEVELOPMENT_TEAM = 62L6L7882M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NextRead/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -307,6 +372,7 @@
 				DEVELOPMENT_TEAM = 62L6L7882M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NextRead/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
