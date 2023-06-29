@@ -9,12 +9,12 @@ import SwiftUI
 
 struct BookDetailView: View {
     @EnvironmentObject var readListViewModel: ReadListViewModel
-    
+
     let book: Book
-    
-//    var isBookInReadList: Bool {
-//        return readListViewModel.readList.contains(book)
-//    }
+
+    var isBookInReadList: Bool {
+        return readListViewModel.readList.contains(book)
+    }
 
     var body: some View {
         ScrollView(showsIndicators: false) {
@@ -37,21 +37,21 @@ struct BookDetailView: View {
                         Text("Unknown error")
                     }
                 }
-                
+
                 Spacer()
-                
+
                 Text(book.author)
                     .font(.system(size: 14, weight: .semibold, design: .rounded))
 
                 Spacer()
                 Text(book.description
                 )
-                    .font(.system(size: 18, design: .rounded))
-                    .frame(width: 300)
-                
+                .font(.system(size: 18, design: .rounded))
+                .frame(width: 300)
+
                 Spacer()
-                
-                if(!book.buy_links.isEmpty) {
+
+                if !book.buy_links.isEmpty {
                     ForEach(book.buy_links.prefix(upTo: 3), id: \.name) { link in
                         Button {
                             UIApplication.shared.open(link.url)
@@ -65,15 +65,15 @@ struct BookDetailView: View {
                         }
                     } //: FOREACH LOOP
                 }
-             
-                    Button {
+                Button {
+                    if isBookInReadList {
+                        readListViewModel.removeFromReadList(book: book)
+                    } else {
                         readListViewModel.addToReadList(book: book)
-                    } label: {
-                        Text("Add to Read List")
                     }
-
-                
-
+                } label: {
+                    Text(isBookInReadList ? "Remove from Read List" : "Add to Read List")
+                }
             } //: VSTACK
         }
     }

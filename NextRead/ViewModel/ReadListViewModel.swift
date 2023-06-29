@@ -5,47 +5,65 @@
 //  Created by Michael Schmidt on 5/22/23.
 //
 
-import Foundation
 import CoreData
 
-
 class ReadListViewModel: ObservableObject {
-    @Published var readList: [BookEntity] = []
+    @Published var readList: [Book] = []
 
-    private let context = PersistenceController.shared.container.viewContext
-    
-    func addToReadList(book: Book) {
-        // Create and associate BuyLinkEntity objects
-        let buyLinkEntities = book.buy_links.map { buyLink in
-            let buyLinkEntity = BuyLinkEntity(context: context)
-            buyLinkEntity.name = buyLink.name
-            buyLinkEntity.url = buyLink.url.absoluteString
-            return buyLinkEntity
-        }
-        
-        let bookEntity = BookEntity(context: context)
-        bookEntity.title = book.title
-        bookEntity.author = book.author
-        bookEntity.bookDescription = book.description
-        bookEntity.publisher = book.publisher
-        bookEntity.rank = Int16(book.rank)
-        bookEntity.bookImage = book.book_image.absoluteString
-        bookEntity.buyLinks = NSOrderedSet(array: buyLinkEntities)
-        
+    private let persistentContainer: NSPersistentContainer
 
-        readList.append(bookEntity)
+    init() {
+        persistentContainer = PersistenceController.shared.container
+        loadReadList()
+    }
+
+    private func loadReadList() {
+        let request: NSFetchRequest<BookEntity> = BookEntity.fetchRequest()
         do {
-            try context.save()
+            let bookEntities = try persistentContainer.viewContext.fetch(request)
+            readList = bookEntities.map { Book(bookEntity: $0) }
         } catch {
-            print("error! \(error.localizedDescription)")
+            print("Failed to fetch read list: \(error)")
         }
     }
-    
-//    func removeFromReadList(book: Book) {
-//        if let index = readList.books.firstIndex(of: book) {
-//            readList.books.remove(at: index)
-//        }
-//    }
-  
-}
 
+    private func saveContext() {
+        do {
+            try persistentContainer.viewContext.save()
+        } catch {
+            print("Failed to save context: \(error)")
+        }
+    }
+
+    func addToReadList(book: Book) {
+        if !readList.contains(book) {
+            let bookEntity = BookEntity(context: persistentContainer.viewContext)
+            bookEntity.title = book.title
+            bookEntity.author = book.author
+            bookEntity.publisher = book.publisher
+            bookEntity.bookDescription = book.description
+            bookEntity.rank = Int16(book.rank)
+            bookEntity.bookImage = book.book_image.absoluteString
+
+            for buyLink in book.buy_links {
+                let buyLinkEntity = BuyLinkEntity(context: persistentContainer.viewContext)
+                buyLinkEntity.name = buyLink.name
+                buyLinkEntity.url = buyLink.url.absoluteString
+                bookEntity.addToBuyLinks(buyLinkEntity)
+            }
+
+            readList.append(book)
+            saveContext()
+        }
+    }
+
+    func removeFromReadList(book: Book) {
+            guard let bookEntity = book.bookEntity else {
+                return
+            }
+            
+            PersistenceController.shared.container.viewContext.delete(bookEntity)
+            PersistenceController.shared.saveContext()
+            readList.removeAll(where: { $0 == book })
+    }
+}
