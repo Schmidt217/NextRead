@@ -72,7 +72,7 @@ struct BookDetailView: View {
                         readListViewModel.addToReadList(book: book)
                     }
                 } label: {
-                    Text(isBookInReadList ? "Remove from Read List" : "Add to Read List")
+                    Text(isBookInReadList ? "Remove from my library" : "Add to My Library")
                 }
             } //: VSTACK
         }

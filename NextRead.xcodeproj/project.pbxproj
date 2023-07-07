@@ -14,8 +14,7 @@
 		4D6542E62A4103C30057290C /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6542E52A4103C30057290C /* Persistence.swift */; };
 		4D6542E92A4103C30057290C /* NextRead.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4D6542E72A4103C30057290C /* NextRead.xcdatamodeld */; };
 		4D6542F12A4104300057290C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6542F02A4104300057290C /* HomeView.swift */; };
-		4D6542F32A4104440057290C /* MyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6542F22A4104440057290C /* MyListView.swift */; };
-		4D6542F52A41044E0057290C /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6542F42A41044E0057290C /* SearchView.swift */; };
+		4D6542F32A4104440057290C /* MyLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6542F22A4104440057290C /* MyLibraryView.swift */; };
 		4D6542F72A41045E0057290C /* BookDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6542F62A41045E0057290C /* BookDetailView.swift */; };
 		4D6542FA2A41048B0057290C /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6542F92A41048A0057290C /* Book.swift */; };
 		4D6542FC2A4104940057290C /* BookResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6542FB2A4104940057290C /* BookResponse.swift */; };
@@ -33,8 +32,7 @@
 		4D6542E52A4103C30057290C /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		4D6542E82A4103C30057290C /* NextRead.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NextRead.xcdatamodel; sourceTree = "<group>"; };
 		4D6542F02A4104300057290C /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		4D6542F22A4104440057290C /* MyListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyListView.swift; sourceTree = "<group>"; };
-		4D6542F42A41044E0057290C /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		4D6542F22A4104440057290C /* MyLibraryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyLibraryView.swift; sourceTree = "<group>"; };
 		4D6542F62A41045E0057290C /* BookDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailView.swift; sourceTree = "<group>"; };
 		4D6542F92A41048A0057290C /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		4D6542FB2A4104940057290C /* BookResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookResponse.swift; sourceTree = "<group>"; };
@@ -100,8 +98,7 @@
 				4D6542F62A41045E0057290C /* BookDetailView.swift */,
 				4D6542DE2A4103C10057290C /* ContentView.swift */,
 				4D6542F02A4104300057290C /* HomeView.swift */,
-				4D6542F22A4104440057290C /* MyListView.swift */,
-				4D6542F42A41044E0057290C /* SearchView.swift */,
+				4D6542F22A4104440057290C /* MyLibraryView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -199,11 +196,10 @@
 			files = (
 				4D6542F72A41045E0057290C /* BookDetailView.swift in Sources */,
 				4D6542FC2A4104940057290C /* BookResponse.swift in Sources */,
-				4D6542F32A4104440057290C /* MyListView.swift in Sources */,
+				4D6542F32A4104440057290C /* MyLibraryView.swift in Sources */,
 				4D6542E92A4103C30057290C /* NextRead.xcdatamodeld in Sources */,
 				4D6542E62A4103C30057290C /* Persistence.swift in Sources */,
 				4D6542FE2A41049F0057290C /* BookViewModel.swift in Sources */,
-				4D6542F52A41044E0057290C /* SearchView.swift in Sources */,
 				4D6542FA2A41048B0057290C /* Book.swift in Sources */,
 				4D6542DF2A4103C10057290C /* ContentView.swift in Sources */,
 				4D6542F12A4104300057290C /* HomeView.swift in Sources */,

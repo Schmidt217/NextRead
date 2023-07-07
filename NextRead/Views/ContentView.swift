@@ -16,7 +16,6 @@ struct ContentView: View {
         TabView {
             NavigationView {
                 HomeView()
-
                     .navigationTitle("Next Read")
             }
             .tabItem {
@@ -24,29 +23,13 @@ struct ContentView: View {
                 Text("Home")
             }
             NavigationView {
-                SearchView()
-
-                    .navigationTitle("Search")
+                MyLibraryView()
+                    .navigationTitle("My Library")
             }
             .tabItem {
-                Image(systemName: "magnifyingglass")
-                Text("Search")
+                Image(systemName: "book")
+                Text("Library")
             }
-            NavigationView {
-                MyListView()
-                    .navigationTitle("My List")
-            }
-            .tabItem {
-                Image(systemName: "list.bullet")
-                Text("My List")
-            }
-
-            //
-            //                     OtherView()
-            //                         .tabItem {
-            //                             Image(systemName: "ellipsis")
-            //                             Text("Other")
-            //                         }
         }
     }
 }

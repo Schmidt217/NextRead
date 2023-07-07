@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Book: Codable, Equatable, Collection {
+struct Book: Codable, Equatable, Collection, Identifiable {
+    
     static func == (lhs: Book, rhs: Book) -> Bool {
         return lhs.title == rhs.title
     }
@@ -27,18 +28,26 @@ struct Book: Codable, Equatable, Collection {
         return buy_links.index(after: i)
     }
     
+    let id = UUID()
     let rank: Int
     let publisher: String
     let description: String
     let title: String
     let author: String
     let book_image: URL
+    var category: Category?
     var buy_links: [BuyLinks]
     var bookEntity: BookEntity?
     
     private enum CodingKeys: String, CodingKey {
            case rank, publisher, description, title, author, book_image, buy_links
        }
+    
+    enum Category: String, CaseIterable {
+        case wantToRead = "Want to Read"
+        case currentlyReading = "Currently Reading"
+        case read = "Read"
+    }
     
     init(rank: Int, publisher: String, description: String, title: String, author: String, book_image: URL, buy_links: [BuyLinks]) {
             self.rank = rank
